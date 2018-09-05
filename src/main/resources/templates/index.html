@@ -5,7 +5,7 @@
 </head>
 <body>
 	<h2>Generate Load</h2>
-	<span th:text="${T(java.net.InetAddress).getLocalHost().getHostAddress()}"></span>
+	<span th:text="${#httpServletRequest.getLocalName()}"></span>
 	<div>
 		<form name="form1" method="post" th:action="@{/generateload}" th:object="${form}">
 			<div>
