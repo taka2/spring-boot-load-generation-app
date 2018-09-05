@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Generate Load</title>
+</head>
+<body>
+	<h2>Generate Load</h2>
+	<span th:text="${T(java.net.InetAddress).getLocalHost().getHostAddress()}"></span>
+	<div>
+		<form name="form1" method="post" th:action="@{/generateload}" th:object="${form}">
+			<div>
+				Thread count(Load multiplier): <input type="text" th:field="*{numThreads}"><br/>
+				Loop count(Load duration): <input type="text" th:field="*{loopCount}"><br/>
+				<button type="submit" name="button1">Generate Load</button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
